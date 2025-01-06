@@ -5,7 +5,8 @@ const Card = ({ card }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const getImgUrl = (name) => {
-    return new URL(`${name}`, import.meta.url).href;
+    const path = `.${import.meta.env.DEV ? "/assets/" : ""}/cards/${name}.jpg`;
+    return new URL(path, import.meta.url).href;
   };
 
   const handleClick = () => {
@@ -16,10 +17,7 @@ const Card = ({ card }) => {
     <div className="cardWrapper" onClick={handleClick}>
       {!isFlipped ? (
         <div className="cardFront">
-          <img
-            src={getImgUrl("assets/cards/" + card.name_short + ".jpg")}
-            alt=""
-          />
+          <img src={getImgUrl(card.name_short)} alt="" />
         </div>
       ) : (
         <div className="cardBack">
