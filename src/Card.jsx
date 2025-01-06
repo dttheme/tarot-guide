@@ -12,7 +12,7 @@ const Card = ({ card }) => {
     <div className="cardWrapper" onClick={handleClick}>
       {!isFlipped ? (
         <div className="cardFront">
-          <img src={"/cards/" + card.name_short + ".jpg"} alt="" />
+          <img src={"public/cards/" + card.name_short + ".jpg"} alt="" />
         </div>
       ) : (
         <div className="cardBack">
