@@ -4,6 +4,10 @@ import { useState } from "react";
 const Card = ({ card }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const getImgUrl = (name) => {
+    return new URL(`${name}`, import.meta.url).href;
+  };
+
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
@@ -12,7 +16,10 @@ const Card = ({ card }) => {
     <div className="cardWrapper" onClick={handleClick}>
       {!isFlipped ? (
         <div className="cardFront">
-          <img src={"public/cards/" + card.name_short + ".jpg"} alt="" />
+          <img
+            src={getImgUrl("assets/cards/" + card.name_short + ".jpg")}
+            alt=""
+          />
         </div>
       ) : (
         <div className="cardBack">
