@@ -5,7 +5,9 @@ const Card = ({ card }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const getImgUrl = (name) => {
-    const path = `.${import.meta.env.DEV ? "/assets/" : ""}/cards/${name}.jpg`;
+    const path = `.${
+      import.meta.env.DEV ? "/assets" : "/src/assets"
+    }/cards/${name}.jpg`;
     return new URL(path, import.meta.url).href;
   };
 
