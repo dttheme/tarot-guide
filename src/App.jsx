@@ -1,10 +1,10 @@
 import "./App.css";
 
-import Card from "./Card";
-import Header from "./Header";
-import NavButtons from "./NavButtons";
-import Search from "./Search";
-import { getAllCards } from "./api";
+import Card from "./components/Card";
+import Header from "./components/Header";
+import NavButtons from "./components/NavButtons";
+import Search from "./components/Search";
+import searchCards from "./function";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -16,6 +16,9 @@ import { useState } from "react";
 // sort by
 // drag and drop into different readings
 // save readings
+// notes on reading
+// calendar
+// change # of cards per row
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -26,14 +29,14 @@ function App() {
 
   useEffect(() => {
     // filter should make the request based on the actual # in the data, not just a search string
-    getAllCards(searchTerm)
-      .then((cards) => {
-        setCards(cards.cards);
-      })
-      .then(() => setIsLoading(false));
+    setCards(searchCards(searchTerm));
+
+    setIsLoading(false);
+    console.log(cards);
   }, [searchTerm, filter, sort]);
 
   const cardList = cards.map((card, i) => {
+    console.log(card);
     return <Card card={card} key={i} />;
   });
 

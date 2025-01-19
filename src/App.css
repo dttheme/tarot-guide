@@ -29,7 +29,9 @@ body {
 .results {
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  gap: 10px;
   margin: 0 auto;
+  width: 90vw;
 }
 .cardWrapper {
   padding: 10px;
@@ -40,9 +42,12 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  min-height: 540px;
 }
 .cardFront {
   display: flex;
   align-items: center;
+}
+.cardFront img {
+  width: 100%;
+  max-width: 100%;
 }
