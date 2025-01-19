@@ -1,19 +1,11 @@
 import PropTypes from "prop-types";
 
-const Search = ({
-  //   searchTerm,
-  //   filter,
-  //   sort,
-  setSearchTerm,
-  //   setFilter,
-  //   setSort,
-}) => {
+const Search = ({ setSearchTerm }) => {
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
   };
   return (
     <div className="search">
-      {/* search */}
       <label htmlFor="search">Search: </label>
       <input
         name="search"
@@ -21,10 +13,6 @@ const Search = ({
         onChange={handleChange}
         placeholder="'Fool', 'minor', 'swords', etc"
       />
-      {/* filter */}
-      {/* <select name="" id=""></select> */}
-      {/* sort */}
-      {/* <select name="" id=""></select> */}
     </div>
   );
 };

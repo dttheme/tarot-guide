@@ -2,8 +2,18 @@
   margin: 0 auto;
   text-align: center;
 }
+body {
+  padding: 25px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
 
 .search {
+  display: grid;
+  grid-template-columns: 25% 75%;
   padding: 25px;
 }
 
@@ -13,12 +23,12 @@
 
 .search input {
   font-size: 20px;
-  width: 50%;
+  width: 100%;
 }
 
 .results {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
   margin: 0 auto;
 }
 .cardWrapper {
@@ -29,7 +39,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 300px;
   text-align: center;
   min-height: 540px;
 }
