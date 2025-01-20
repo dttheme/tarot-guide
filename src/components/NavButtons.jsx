@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 const NavButtons = ({ setFilter }) => {
   const handleClick = (e) => {
     const value = e.target.value;
-    console.log(value);
+
     setFilter(value);
   };
   return (
-    <div>
+    <div className="navButtons">
       <div>
+        <button value={""} onClick={handleClick}>
+          All
+        </button>
         <button value={"major"} onClick={handleClick}>
           Major
         </button>
@@ -17,34 +20,34 @@ const NavButtons = ({ setFilter }) => {
         </button>
       </div>
       <div>
-        <button value={"1"} onClick={handleClick}>
+        <button value={"ace"} onClick={handleClick}>
           Ace
         </button>
-        <button value={"2"} onClick={handleClick}>
+        <button value={"two"} onClick={handleClick}>
           2
         </button>
-        <button value={"3"} onClick={handleClick}>
+        <button value={"three"} onClick={handleClick}>
           3
         </button>
-        <button value={"4"} onClick={handleClick}>
+        <button value={"four"} onClick={handleClick}>
           4
         </button>
-        <button value={"5"} onClick={handleClick}>
+        <button value={"five"} onClick={handleClick}>
           5
         </button>
-        <button value={"6"} onClick={handleClick}>
+        <button value={"six"} onClick={handleClick}>
           6
         </button>
-        <button value={"7"} onClick={handleClick}>
+        <button value={"seven"} onClick={handleClick}>
           7
         </button>
-        <button value={"8"} onClick={handleClick}>
+        <button value={"eight"} onClick={handleClick}>
           8
         </button>
-        <button value={"9"} onClick={handleClick}>
+        <button value={"nine"} onClick={handleClick}>
           9
         </button>
-        <button value={"10"} onClick={handleClick}>
+        <button value={"ten"} onClick={handleClick}>
           10
         </button>
       </div>

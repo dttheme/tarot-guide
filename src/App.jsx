@@ -3,57 +3,68 @@ import "./App.css";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import NavButtons from "./components/NavButtons";
-import Search from "./components/Search";
 import searchCards from "./function";
 import { useEffect } from "react";
 import { useState } from "react";
 
-// change size of card
+// todo
 // dark/light theme
 // open cards into modal on button/link click
-// sort properly (fool is 0)
-// filter by major, minor, suit
-// sort by
 // drag and drop into different readings
 // save readings
 // notes on reading
 // calendar
+// search meaning
+
+// done
 // change # of cards per row
+// sort properly (fool is 0)
+// change size of card
+// filter by major, minor, suit
 
 function App() {
   const [cards, setCards] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState("");
-  const [sort, setSort] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [cardRow, setCardRow] = useState(2);
 
   useEffect(() => {
-    // filter should make the request based on the actual # in the data, not just a search string
-    setCards(searchCards(searchTerm));
-
-    setIsLoading(false);
-    console.log(cards);
-  }, [searchTerm, filter, sort]);
+    setCards(searchCards(filter));
+  }, [filter]);
 
   const cardList = cards.map((card, i) => {
-    console.log(card);
     return <Card card={card} key={i} />;
   });
+
+  const handleRange = (e) => {
+    setCardRow(Number(e.target.value));
+  };
 
   return (
     <>
       <Header>
-        <Search
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          filter={filter}
-          setFilter={setFilter}
-          sort={sort}
-          setSort={setSort}
-        />
         <NavButtons setFilter={setFilter}></NavButtons>
+        <div>
+          <label htmlFor="card-row">Cards per Row: {cardRow}</label>
+          <input
+            type="range"
+            name="cardRow"
+            id="card-row"
+            min={1}
+            max={4}
+            value={cardRow}
+            onChange={handleRange}
+          />
+        </div>
       </Header>
-      <div className="results">{isLoading ? "Loading..." : cardList}</div>
+      <div className="resultsContainer">
+        <div>{cardList.length.toString()} Cards</div>
+        <div
+          className="results"
+          style={{ gridTemplateColumns: `repeat(${cardRow}, 1fr` }}
+        >
+          {cardList}
+        </div>
+      </div>
     </>
   );
 }
