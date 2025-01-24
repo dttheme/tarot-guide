@@ -105,3 +105,8 @@
   width: 100%;
   max-width: 100%;
 }
+
+.footer {
+  text-align: center;
+  margin: 15px 0;
+}

@@ -45,6 +45,8 @@ Card.propTypes = {
     desc: PropTypes.string,
     meaning_up: PropTypes.string,
     meaning_rev: PropTypes.string,
+    type: PropTypes.string,
+    suit: PropTypes.string,
   }),
 };
 
