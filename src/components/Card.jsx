@@ -14,7 +14,11 @@ const Card = ({ card }) => {
   };
 
   return (
-    <div className="cardWrapper" onClick={handleClick}>
+    <div
+      className="cardWrapper"
+      onClick={handleClick}
+      style={{ overflowY: isFlipped ? "scroll" : "hidden" }}
+    >
       {!isFlipped ? (
         <div className="cardFront">
           <img src={getImgUrl(card.name_short)} alt="" />
@@ -22,15 +26,12 @@ const Card = ({ card }) => {
       ) : (
         <div className="cardBack">
           <h2>{card.name}</h2>
-          <h3>Upright </h3>
+          <h3>Upright</h3>
           <p>{card.meaning_up}</p>
-          <h3>Reversed </h3>
+          <h3>Reversed</h3>
           <p>{card.meaning_rev}</p>
-          {/* <p>
-            {card.desc.length > 300
-              ? card.desc.substring(0, 300) + "..."
-              : card.desc}
-          </p> */}
+          <h3>Description</h3>
+          <p>{card.desc}</p>
         </div>
       )}
     </div>

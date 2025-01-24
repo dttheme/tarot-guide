@@ -8,8 +8,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 // todo
+// link to different resources (build link for biddy, labyrinthos, the tarot-guide) (might not be possible/efficient bc they're all weird af links)
 // dark/light theme
-// open cards into modal on button/link click
+// sparkles
+// about (modal?, toggletip?)
 // drag and drop into different readings
 // save readings
 // notes on reading
@@ -21,6 +23,7 @@ import { useState } from "react";
 // sort properly (fool is 0)
 // change size of card
 // filter by major, minor, suit
+// scroll inside card back
 
 function App() {
   const [cards, setCards] = useState([]);
