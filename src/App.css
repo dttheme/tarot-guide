@@ -23,6 +23,30 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.toggleTip {
+  position: relative;
+}
+
+.toggleTipText {
+  position: absolute;
+  background-color: white;
+  padding: 25px;
+  border-radius: 5px;
+  color: rgb(25, 15, 48);
+  width: 100%;
+}
+
+.toggleTipOpen,
+.toggleTipClose {
+  background-color: transparent;
+}
+.toggleTipClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgb(25, 15, 48);
+}
+
 .navButtons > div > button {
   padding: 3px;
 }
