@@ -2,7 +2,40 @@ import PropTypes from "prop-types";
 import ToggleTip from "./ToggleTip";
 
 const Header = ({ children }) => {
-  const aboutText = `Hi! Thanks for checking out Tarot Guide. This is a pet project of Dyanna Turner. You can see the code here. Card data collected by tarot-api.`;
+  const githubUrl = (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://github.com/dttheme/tarot-guide"
+    >
+      here
+    </a>
+  );
+  const TarotApiUrl = (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://github.com/ekelen/tarot-api"
+    >
+      tarot-api
+    </a>
+  );
+  const personalSite = (
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://dyannaturner.com"
+    >
+      Dyanna Turner
+    </a>
+  );
+  const aboutText = (
+    <>
+      Hi! Thanks for checking out Tarot Guide. This is a pet project of{" "}
+      {personalSite}. You can see the code {githubUrl}. Card data collected by{" "}
+      {TarotApiUrl}.
+    </>
+  );
   return (
     <div className="header">
       <div>

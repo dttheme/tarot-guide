@@ -9,10 +9,10 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 // todo
+// fix scrollbar making cards act strange (changing size)
 // link to different resources (build link for biddy, labyrinthos, the tarot-guide) (might not be possible/efficient bc they're all weird af links)
 // dark/light theme
 // sparkles
-// about (modal?, toggletip?)
 // drag and drop into different readings
 // save readings
 // notes on reading
@@ -25,6 +25,7 @@ import { useState } from "react";
 // change size of card
 // filter by major, minor, suit
 // scroll inside card back
+// about (modal?, toggletip?)
 
 function App() {
   const [cards, setCards] = useState([]);
