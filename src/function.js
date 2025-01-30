@@ -1,4 +1,5 @@
 import data from "./card_data.json";
+import notes from "./card_notes.json";
 
 const cardData = data.cards;
 
@@ -31,4 +32,12 @@ const searchCards = (filter) => {
   return results;
 };
 
-export default searchCards;
+const searchNotes = (filter) => {
+  const filteredByKey = Object.keys(notes).filter(
+    (note_key) => note_key === filter
+  );
+  const note = notes[filteredByKey]?.note || "";
+  return note;
+};
+
+export { searchCards, searchNotes };

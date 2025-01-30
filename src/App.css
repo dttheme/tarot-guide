@@ -5,22 +5,30 @@
 
 .header {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: max-content;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   background-color: rgb(25, 15, 48);
   height: 20vh;
-  font-size: 15px;
+  font-size: 14px;
   padding: 1em;
   z-index: 2;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .header h1 {
   font-size: 1.5em;
   font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.header .about {
+  display: flex;
+  align-items: center;
+  grid-column: 1/-1;
 }
 
 .toggleTip {
@@ -34,6 +42,7 @@
   border-radius: 5px;
   color: rgb(25, 15, 48);
   width: 100%;
+  min-width: 200px;
 }
 
 .toggleTipOpen,
@@ -49,6 +58,22 @@
 
 .navButtons > div > button {
   padding: 3px;
+  margin: 1px;
+  background-color: antiquewhite;
+  border-left-width: 5px;
+  border-radius: 3px;
+  border-color: darkblue;
+  color: darkblue;
+  font-weight: bolder;
+}
+
+/* .navButtons > div > button:focus {
+  outline: 5px green;
+} */
+
+.cardRow {
+  display: flex;
+  align-items: center;
 }
 
 /* .search {
@@ -74,7 +99,6 @@
 .results {
   display: inline-grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: fit-content(40%);
   gap: 0.25em;
   width: 90vw;
   max-width: 625px;
@@ -126,8 +150,9 @@
 }
 
 .cardFront img {
+  object-fit: contain;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
 }
 
 .footer {

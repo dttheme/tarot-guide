@@ -1,0 +1,62 @@
+{
+  "major": {
+    "note": "Lorem ipsum"
+  },
+  "minor": {
+    "note": "Lorem ipsum"
+  },
+  "ace": {
+    "note": "New beginnings"
+  },
+  "two": {
+    "note": "Partnership"
+  },
+  "three": {
+    "note": "Creation"
+  },
+  "four": {
+    "note": "Stability and foundations"
+  },
+  "five": {
+    "note": "Conflict and change"
+  },
+  "six": {
+    "note": "Harmony and growth"
+  },
+  "seven": {
+    "note": "Attainment and understanding"
+  },
+  "eight": {
+    "note": "Mastery and power"
+  },
+  "nine": {
+    "note": "Fruition and fulfillment"
+  },
+  "ten": {
+    "note": "Completion and ending"
+  },
+  "king": {
+    "note": "Mature, dominant, authoritative, leads from outer power"
+  },
+  "queen": {
+    "note": "Mature, receptive, leads from inner power"
+  },
+  "knight": {
+    "note": "In pursuit of a mission and action-oriented"
+  },
+  "page": {
+    "note": "Ready to explore new opportunities"
+  },
+  "swords": {
+    "note": "Air, a journey of intellect and beliefs"
+  },
+  "wands": {
+    "note": "Fire, a journey of primal energy and expansion"
+  },
+  "cups": {
+    "note": "Water, a journey of emotion and relationships"
+  },
+  "pentacles": {
+    "note": "Earth, a journey of work and finance"
+  }
+}

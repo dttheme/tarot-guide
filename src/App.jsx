@@ -1,10 +1,10 @@
 import "./App.css";
 
+import { searchCards, searchNotes } from "./function";
+
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import NavButtons from "./components/NavButtons";
-import searchCards from "./function";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -31,9 +31,14 @@ function App() {
   const [cards, setCards] = useState([]);
   const [filter, setFilter] = useState("");
   const [cardRow, setCardRow] = useState(2);
+  const [note, setNote] = useState("");
 
   useEffect(() => {
-    setCards(searchCards(filter));
+    const _note = searchNotes(filter);
+    const _cards = searchCards(filter);
+    // console.log(_note);
+    setCards(_cards);
+    setNote(_note);
   }, [filter]);
 
   const cardList = cards.map((card, i) => {
@@ -46,21 +51,12 @@ function App() {
 
   return (
     <>
-      <Header>
-        <NavButtons setFilter={setFilter}></NavButtons>
-        <div>
-          <label htmlFor="card-row">Cards per Row: {cardRow}</label>
-          <input
-            type="range"
-            name="cardRow"
-            id="card-row"
-            min={1}
-            max={4}
-            value={cardRow}
-            onChange={handleRange}
-          />
-        </div>
-      </Header>
+      <Header
+        setFilter={setFilter}
+        handleRange={handleRange}
+        cardRow={cardRow}
+        note={note}
+      />
       <div className="resultsContainer">
         <div>{cardList.length.toString()} Cards</div>
         <div
@@ -70,7 +66,7 @@ function App() {
           {cardList}
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }
