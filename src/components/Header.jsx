@@ -36,12 +36,14 @@ const Header = ({ setFilter, cardRow, handleRange, note }) => {
   return (
     <div className="header">
       <div className="content">
-        <h1>Tarot Guide</h1>
-        <div className="about">
-          <ToggleTip
-            toggleOpenText="About"
-            toggleTipText={aboutText}
-          ></ToggleTip>
+        <div className="title">
+          <h1>Tarot Guide</h1>
+          <div className="about">
+            <ToggleTip
+              toggleOpenText="About"
+              toggleTipText={aboutText}
+            ></ToggleTip>
+          </div>
         </div>
         <div>
           <NavButtons setFilter={setFilter}></NavButtons>
@@ -58,7 +60,7 @@ const Header = ({ setFilter, cardRow, handleRange, note }) => {
             />
           </div>
         </div>
-        <div>{note}</div>
+        <div className="note">{note}</div>
       </div>
     </div>
   );
