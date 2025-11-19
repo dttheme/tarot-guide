@@ -52,13 +52,19 @@
   padding: 0.25rem 0.5rem;
 }
 
-/* right-side note: larger, centered, takes remaining space */
-.header .note {
+.note {
   flex: 1 1 40%;
   text-align: center;
   font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-weight: 700;
   color: #e6eaff;
   padding: 0.25rem 0.5rem;
+  background-color: #00031abe;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .toggleTip {
@@ -134,7 +140,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0.25em;
   width: 90vw;
-  max-width: 625px;
+  max-width: 1000px;
 }
 
 .cardWrapper {
