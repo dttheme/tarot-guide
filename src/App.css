@@ -4,20 +4,35 @@
 }
 
 .header {
-  display: grid;
-  grid-template-columns: max-content;
+  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  background-color: rgb(25, 15, 48);
-  height: 20vh;
+  background: #000425;
+  background: radial-gradient(
+    circle,
+    rgb(0, 10, 71) 30%,
+    rgba(15, 11, 59, 0) 100%
+  );
+  margin: auto;
   font-size: 14px;
   padding: 1em;
   z-index: 2;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+
+.header .content {
+  width: 90vw;
+  margin: 3vw auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .header h1 {
@@ -55,16 +70,14 @@
   right: 0;
   color: rgb(25, 15, 48);
 }
+.navButtons > div {
+  display: flex;
+  padding: 5px;
+}
 
 .navButtons > div > button {
   padding: 3px;
   margin: 1px;
-  background-color: antiquewhite;
-  border-left-width: 5px;
-  border-radius: 3px;
-  border-color: darkblue;
-  color: darkblue;
-  font-weight: bolder;
 }
 
 /* .navButtons > div > button:focus {
@@ -93,7 +106,7 @@
 
 .resultsContainer {
   position: relative;
-  margin-top: 25vh;
+  margin-top: 275px;
 }
 
 .results {
